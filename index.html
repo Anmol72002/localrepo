@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Valentine 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <main class="card">
+    <p class="intro">To my beautiful girlfriend</p>
+    <h1>Happy Valentine’s Day, <span id="name">My Love</span> ❤️</h1>
+    <p class="message">
+      Every moment with you feels like a little piece of magic. Thank you for your smile,
+      your kindness, and your love. You make my world brighter every single day.
+    </p>
+
+    <div class="reasons">
+      <h2>Why I adore you:</h2>
+      <ul>
+        <li>Your laugh is my favorite sound.</li>
+        <li>You make ordinary days feel special.</li>
+        <li>You believe in me when I need it most.</li>
+      </ul>
+    </div>
+
+    <button id="surpriseBtn" type="button">Open a little surprise ✨</button>
+    <p id="surpriseText" class="surprise hidden">I love you today, tomorrow, and forever. 💘</p>
+
+    <section class="photo-memory">
+      <h2>Little Photo Memories 📸</h2>
+      <p class="memory-intro">Tap any button and I’ll reveal another sweet memory for us.</p>
+
+      <div class="memory-buttons" role="group" aria-label="Reveal memory photos">
+        <button class="memory-btn" type="button" data-target="photo1">First Date Vibes</button>
+        <button class="memory-btn" type="button" data-target="photo2">Sunset Moment</button>
+        <button class="memory-btn" type="button" data-target="photo3">Forever Us</button>
+      </div>
+
+      <div class="memory-grid">
+        <figure id="photo1" class="memory-card hidden" aria-live="polite">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='430'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ffd6e7'/%3E%3Cstop offset='100%25' stop-color='%23ff7cb3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='430' fill='url(%23g1)'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' font-size='40' fill='%23ffffff' font-family='Poppins'%3EFirst Date%3C/text%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='24' fill='%23ffffff' font-family='Poppins'%3EYou looked stunning 💗%3C/text%3E%3C/svg%3E" alt="Romantic illustration representing your first date." />
+          <figcaption>The day I knew you were someone truly special.</figcaption>
+        </figure>
+
+        <figure id="photo2" class="memory-card hidden" aria-live="polite">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='430'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ff9ac5'/%3E%3Cstop offset='100%25' stop-color='%23ffd9a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='430' fill='url(%23g2)'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' font-size='40' fill='%23ffffff' font-family='Poppins'%3ESunset Walk%3C/text%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='24' fill='%23ffffff' font-family='Poppins'%3EHand in hand 🌅%3C/text%3E%3C/svg%3E" alt="Romantic sunset-themed illustration." />
+          <figcaption>Every sunset feels warmer with your hand in mine.</figcaption>
+        </figure>
+
+        <figure id="photo3" class="memory-card hidden" aria-live="polite">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='430'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ffc7df'/%3E%3Cstop offset='100%25' stop-color='%23fca3ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='430' fill='url(%23g3)'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' font-size='40' fill='%23ffffff' font-family='Poppins'%3EForever Us%3C/text%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='24' fill='%23ffffff' font-family='Poppins'%3EMy favorite love story 💞%3C/text%3E%3C/svg%3E" alt="Romantic forever-themed illustration." />
+          <figcaption>Thank you for being my happiest place, always.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
