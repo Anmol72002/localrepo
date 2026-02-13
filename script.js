@@ -1,9 +1,7 @@
 const surpriseBtn = document.getElementById('surpriseBtn');
 const surpriseText = document.getElementById('surpriseText');
-const effectStatus = document.getElementById('effectStatus');
 const heartsLayer = document.querySelector('.floating-hearts');
 const memoryButtons = document.querySelectorAll('.memory-btn');
-const allButtons = document.querySelectorAll('button');
 
 if (surpriseBtn && surpriseText) {
   surpriseBtn.addEventListener('click', () => {
@@ -11,23 +9,6 @@ if (surpriseBtn && surpriseText) {
     surpriseBtn.textContent = 'You are my favorite person 💞';
   });
 }
-
-allButtons.forEach((button) => {
-  button.addEventListener('click', (event) => {
-    const x = Number.isFinite(event.clientX) && event.clientX > 0
-      ? event.clientX
-      : window.innerWidth / 2;
-    const y = Number.isFinite(event.clientY) && event.clientY > 0
-      ? event.clientY
-      : window.innerHeight / 2;
-
-    burstHeartsAtPoint(x, y, 14);
-
-    if (effectStatus) {
-      effectStatus.textContent = `💗 Pop! Hearts launched at x:${Math.round(x)}, y:${Math.round(y)}`;
-    }
-  });
-});
 
 memoryButtons.forEach((button) => {
   const defaultLabel = button.textContent;
@@ -48,27 +29,20 @@ memoryButtons.forEach((button) => {
   });
 });
 
-function burstHeartsAtPoint(x, y, count = 10) {
+function createHeart() {
   if (!heartsLayer) {
     return;
   }
 
-  for (let i = 0; i < count; i += 1) {
-    const heart = document.createElement('span');
-    heart.className = 'burst-heart';
+  const heart = document.createElement('span');
+  heart.className = 'heart';
+  heart.style.left = `${Math.random() * 100}%`;
+  heart.style.bottom = '-20px';
+  heart.style.animationDuration = `${4 + Math.random() * 4}s`;
+  heart.style.opacity = `${0.4 + Math.random() * 0.5}`;
+  heartsLayer.appendChild(heart);
 
-    const angle = (Math.PI * 2 * i) / count;
-    const spread = 35 + Math.random() * 80;
-    const rise = 80 + Math.random() * 120;
-
-    heart.style.left = `${x}px`;
-    heart.style.top = `${y}px`;
-    heart.style.setProperty('--x', `${Math.cos(angle) * spread}px`);
-    heart.style.setProperty('--y', `${-rise}px`);
-    heart.style.setProperty('--duration', `${700 + Math.random() * 900}ms`);
-    heart.style.opacity = `${0.55 + Math.random() * 0.4}`;
-
-    heartsLayer.appendChild(heart);
-    setTimeout(() => heart.remove(), 2000);
-  }
+  setTimeout(() => heart.remove(), 8000);
 }
+
+setInterval(createHeart, 320);

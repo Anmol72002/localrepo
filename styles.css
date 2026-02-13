@@ -84,28 +84,18 @@ button {
   border-radius: 999px;
   font-size: 1rem;
   cursor: pointer;
-  transition: box-shadow 0.2s ease, filter 0.2s ease;
-  will-change: box-shadow, filter;
-  backface-visibility: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  button:hover {
-    box-shadow: 0 10px 22px rgba(255, 43, 120, 0.35);
-    filter: saturate(1.03);
-  }
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(255, 43, 120, 0.35);
 }
 
 .surprise {
   margin-top: 1rem;
   font-weight: 600;
   color: var(--deep-pink);
-}
-
-.effect-status {
-  margin: 0.5rem 0 0;
-  font-size: 0.9rem;
-  color: #9c466b;
 }
 
 .photo-memory {
@@ -165,43 +155,38 @@ button {
 }
 
 .floating-hearts {
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
+  z-index: 0;
 }
 
-.burst-heart {
+.heart {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(255, 43, 120, 0.9);
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 77, 141, 0.75);
   transform: rotate(45deg);
+  animation: floatUp linear forwards;
   pointer-events: none;
-  animation: burstFloat var(--duration, 1300ms) ease-out forwards;
 }
 
-.burst-heart::before,
-.burst-heart::after {
+.heart::before,
+.heart::after {
   content: '';
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   background: inherit;
   border-radius: 50%;
 }
 
-.burst-heart::before { top: -5px; left: 0; }
-.burst-heart::after { left: -5px; top: 0; }
+.heart::before { top: -7px; left: 0; }
+.heart::after { left: -7px; top: 0; }
 
-@keyframes burstFloat {
-  0% {
-    transform: translate(0, 0) scale(0.6) rotate(45deg);
-    opacity: 0.95;
-  }
-  100% {
-    transform: translate(var(--x, 0), var(--y, -140px)) scale(1.05) rotate(45deg);
+@keyframes floatUp {
+  to {
+    transform: translateY(-120vh) rotate(45deg);
     opacity: 0;
   }
 }
