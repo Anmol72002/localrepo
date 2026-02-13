@@ -4,6 +4,7 @@ const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const mainContent = document.getElementById('mainContent');
 const heartsLayer = document.getElementById('heartsLayer');
+const catFollower = document.getElementById('catFollower');
 
 const loveBtn = document.getElementById('loveBtn');
 const loveMsg = document.getElementById('loveMsg');
@@ -100,3 +101,34 @@ window.addEventListener('resize', () => {
 });
 
 moveNoButton();
+
+let catX = window.innerWidth / 2;
+let catY = window.innerHeight / 2;
+let targetX = catX;
+let targetY = catY;
+let lastMoveTs = 0;
+
+function animateCat() {
+  if (!catFollower) return;
+
+  catX += (targetX - catX) * 0.18;
+  catY += (targetY - catY) * 0.18;
+
+  const moving = Date.now() - lastMoveTs < 140;
+  catFollower.classList.toggle('is-resting', !moving);
+  catFollower.style.transform = `translate(${catX}px, ${catY}px) translate(-50%, -50%)`;
+
+  requestAnimationFrame(animateCat);
+}
+
+window.addEventListener('mousemove', (event) => {
+  targetX = event.clientX + 14;
+  targetY = event.clientY + 16;
+  lastMoveTs = Date.now();
+});
+
+if (catFollower) {
+  catFollower.style.transform = `translate(${catX}px, ${catY}px) translate(-50%, -50%)`;
+  requestAnimationFrame(animateCat);
+}
+
