@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Love ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="heartsLayer" class="hearts-layer" aria-hidden="true"></div>
+    <div id="catFollower" class="cat-follower" aria-hidden="true"></div>
+
+    <div id="memoryLightbox" class="memory-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo view">
+      <div class="memory-lightbox__backdrop"></div>
+      <div class="memory-lightbox__content">
+        <img class="memory-lightbox__img" src="" alt="" />
+        <p class="memory-lightbox__caption"></p>
+      </div>
+    </div>
+
+    <section id="gate" class="gate" aria-live="polite">
+      <div class="gate-card">
+        <h1 class="gate-title">Hey, Momo <br> Will you be my valentine? 💌</h1>
+        <div class="gate-cats" aria-hidden="true">
+          <div id="gateMoodCat" class="cat-cutout cat-cutout--mood is-thinking">😺</div>
+          <div class="cat-cutout cat-cutout--peek">🐾</div>
+        </div>
+        <div class="gate-actions" id="gateActions">
+          <button id="yesBtn" class="btn btn-primary" type="button">Yes 💖</button>
+          <button id="noBtn" class="btn btn-no" type="button">No</button>
+        </div>
+      </div>
+    </section>
+
+    <main id="mainContent" class="main-content hidden" aria-hidden="true">
+      <!-- Swipe container: two separate full-page views -->
+      <div id="contentSwipe" class="content-swipe">
+        <!-- Page 1: Memories - scrollable -->
+        <div id="memoriesPage" class="content-sheet content-sheet--memories">
+          <div class="content-page-inner">
+            <section class="cat-party card" aria-label="happy cat cutouts">
+              <h3>Cat Celebration Party 🐾</h3>
+              <p class="sub">They are all happy you clicked yes!</p>
+              <div class="party-cats" aria-hidden="true">
+                <div class="cat-cutout dance-a">😻</div>
+                <div class="cat-cutout dance-b">😸</div>
+                <div class="cat-cutout dance-c">😺</div>
+                <div class="cat-cutout dance-d">😽</div>
+                <div class="cat-cutout dance-e">😹</div>
+              </div>
+            </section>
+            <section class="memories card">
+              <h3>Our little memories 📸</h3>
+              <p class="sub">Tap a button to reveal a photo card.</p>
+              <div class="button-row" role="group" aria-label="Memory buttons">
+                <button class="btn memory-btn" data-target="m1" data-audio="audio-date" type="button">Our First Date</button>
+                <button class="btn memory-btn" data-target="m2" data-audio="audio-chai" type="button">Best Chai Date Ever</button>
+                <button class="btn memory-btn" data-target="m3" data-audio="audio-forever" type="button">Forever Us</button>
+              </div>
+              <div class="media-control-wrap">
+                <button id="mediaToggleBtn" class="btn btn-media" type="button" aria-label="Pause music" title="Pause music">
+                  <span aria-hidden="true">⏸ Pause Song</span>
+                </button>
+              </div>
+              <audio id="audio-date" preload="auto" src="AjabSi.mp3"></audio>
+              <audio id="audio-chai" preload="auto" src="TumSeHi.mp3"></audio>
+              <audio id="audio-forever" preload="auto" src="ZaraSa.mp3"></audio>
+              <audio id="audio-love" preload="auto" src="GehraHua.mp3"></audio>
+              <div class="memory-grid">
+                <figure id="m1" class="memory memory--hidden">
+                  <img alt="Our First Date" src="1.jpeg" width="640" height="430" />
+                  <figcaption>The day I got lost in those heavenly Eyes of yours.😍</figcaption>
+                </figure>
+                <figure id="m2" class="memory memory--hidden">
+                  <img alt="Best Chai Date Ever" src="2.jpeg" width="640" height="430"/>
+                  <figcaption>Even the worst Chai is Tastiest when I'm with you. (Not that the Chai was bad :|)☕</figcaption>
+                </figure>
+                <figure id="m3" class="memory memory--hidden">
+                  <img alt="Romantic forever" src="3.jpeg" width="640" height="430"/>
+                  <figcaption>You're the first thing that comes to my mind when I wake up and the last thing that I think of before I sleep.💕</figcaption>
+                </figure>
+              </div>
+            </section>
+            <div class="slide-nav-wrap">
+              <button id="goToHeroBtn" class="btn btn-primary btn-slide-next" type="button">There's More, Babe 💖</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page 2: Hero - separate page, swipe in -->
+        <div id="heroPage" class="content-sheet content-sheet--hero">
+          <div class="content-page-inner">
+
+            <section class="hero card">
+              <p class="eyebrow">To my beautiful girlfriend</p>
+              <h2 class="headline">Happy Valentine's Day, meri Dhokli 💖</h2>
+
+              <button id="loveBtn" class="btn btn-primary btn-finale" data-audio="audio-love" type="button">
+                Here's a little surprise for you ✨
+              </button>
+              <div id="loveMsg" class="love-msg hidden">
+              <div class="hero-letter">
+                <h3 class="hero-mini-title">A little note for you 💌</h3>
+                <p>
+                  I don’t need a perfect day. I just need you.
+                  Thank you for being my peace, my happiness, and the most beautiful part of my life.
+                </p>
+                <p>
+                  I’m grateful for every moment with you — and I can’t wait to make a thousand more memories with you.
+                </p>
+              </div>
+            
+              <div class="hero-reasons">
+                <h3 class="hero-mini-title">Few of the Infinite Reasons I'm Crazy about You 🌸</h3>
+                <ul class="reasons-list">
+                  <li>I can't help but smile and feel good the moment I see you 😍</li>
+                  <li>You're the only person who feels like home 💕</li>
+                  <li>You’re kind even when you don’t have to be 😊</li>
+                  <li>You’re my best friend who I've opened up to in a way I've never opened up to anyone else 💖</li>
+                  <li>I actually look forward to work days just so we can talk all day 😂</li>
+                </ul>
+              </div>
+            
+              <div class="hero-promise">
+                <h3 class="hero-mini-title">My promise to you 🤍</h3>
+                <p>
+                  I promise to always be there for you, keep you happy and smiling, and make you feel special and loved —
+                  not only on the easy days, but especially on the hard ones.❤️‍🔥
+                </p>
+              </div>
+              </div>
+            
+              <a id="loveLink" class="love-link hidden" href="https://digibouquet.vercel.app/bouquet/76079e01-e773-4e91-82a9-fd3434074245" target="_blank" rel="noopener noreferrer">
+                Open your surprise 💝
+              </a>
+            </section>
+
+            
+            <!-- <section class="hero card">
+              <p class="eyebrow">To my beautiful girlfriend</p>
+              <h2 class="headline">Happy Valentine's Day, meri Dhokli 💖</h2>
+              <p>
+                You make ordinary moments feel magical. Thank you for your smile, your kindness,
+                and every little thing you do.
+              </p>
+              <button id="loveBtn" class="btn btn-primary" data-audio="audio-love" type="button">Here's a little surprise for you ✨</button>
+              <p id="loveMsg" class="love-msg hidden">I love you today, tomorrow, and forever. 💘</p>
+              <a id="loveLink" class="love-link hidden" href="#" target="_blank" rel="noopener noreferrer">Open your surprise 💝</a>
+            </section> -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
